@@ -1,1 +1,5 @@
 /**/.terraform
+/**/archives
+/**/mytextfile.txt
+/**/*.tfstate
+/**/*.tfstate.backup

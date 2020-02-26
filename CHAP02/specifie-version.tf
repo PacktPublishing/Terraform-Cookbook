@@ -3,7 +3,7 @@ terraform {
 }
 
 provider "azurerm" {
-    version = "1.40"
+    version = "< 2.0.0"
 }
 
 variable "resource_group_name" {

@@ -1,0 +1,5 @@
+resource_group_name = "My-RG"
+location            = "westus"
+application_name    = "myappdemo"
+environment_name    = "dev"
+country_code        = "fr"

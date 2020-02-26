@@ -1,3 +1,7 @@
+provider "azurerm" {
+    version = "< 2.0.0"
+}
+
 variable "application_name" {
   description = "The name of application"
 }
@@ -25,5 +29,5 @@ resource "azurerm_public_ip" "pip" {
 
 
 locals {
-  resource_name = "${var.application_name}-${var.environment_name}-${var-country_code}"
+  resource_name = "${var.application_name}-${var.environment_name}-${var.country_code}"
 }

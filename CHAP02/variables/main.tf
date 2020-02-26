@@ -1,3 +1,8 @@
+
+provider "azurerm" {
+    version = "< 2.0.0"
+}
+
 variable "resource_group_name" {
   description ="The name of the resource group"
 }
