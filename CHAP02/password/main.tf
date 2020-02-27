@@ -1,5 +1,6 @@
 # Configure the Microsoft Azure Provider
 provider "azurerm" {
+    version = "< 2.0.0"
 }
 
 # Create a resource group if it doesn’t exist
@@ -106,5 +107,6 @@ resource "azurerm_virtual_machine" "myterraformvm" {
 
     boot_diagnostics {
         enabled = "false"
+        storage_uri ="https://myuri"
     }
 }
