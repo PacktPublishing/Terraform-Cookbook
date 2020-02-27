@@ -18,6 +18,11 @@ locals {
   resource_name = "${var.application_name}-${var.environment_name}-${var.country_code}"
 }
 
+resource "azurerm_resource_group" "rg" {
+  name     = "RG-${local.resource_name}"
+  location = data.external.getlocation.result.location
+}
+
 
 data "external" "getlocation" {
   program = ["Powershell.exe", "./GetLocation.ps1"]
@@ -25,11 +30,6 @@ data "external" "getlocation" {
   query = {
     environment = "${var.environment_name}"
   }
-}
-
-resource "azurerm_resource_group" "rg" {
-  name     = "RG-${local.resource_name}"
-  location = data.external.getlocation.result.location
 }
 
 output "locationname" {
