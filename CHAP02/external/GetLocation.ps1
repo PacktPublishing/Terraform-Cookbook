@@ -5,9 +5,6 @@ $jsonpayload = [Console]::In.ReadLine()
 $json = ConvertFrom-Json $jsonpayload
 $environment = $json.environment
 
-
-# Write-Error "Something went wrong"
-# exit 1
 if($environment -eq "Production"){
     $location="westeurope"
 }else{
