@@ -10,11 +10,6 @@ provider "azurerm" {
 resource "azurerm_resource_group" "rg-app" {
   name     = "${var.resource_groupe_name}-${var.environement}"
   location = var.location
-  ## OLD CODE WIThOUT MAP
-  #tags = {
-  #  ENV = var.environement
-  #  CREATEDBY = var.created_by
-  #}
 
   tags = var.tags
 }
@@ -41,12 +36,5 @@ resource "azurerm_app_service" "app" {
     scm_type                 = "LocalGit"
   }
 
-  ## OLD CODE WIThOUT MAP
-  #app_settings = {
-  #  "KEY1" = "VAL1"
-  #}
-
-
   app_settings = var.app_settings
-
 }

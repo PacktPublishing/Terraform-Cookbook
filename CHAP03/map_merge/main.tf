@@ -30,6 +30,12 @@ resource "azurerm_app_service_plan" "plan-app" {
   }
 }
 
+locals {
+  default_app_settings = {
+    "DEFAULT_KEY1" = "DEFAULT_VAL1"
+  }
+}
+
 resource "azurerm_app_service" "app" {
   name                = "${var.app_name}-${var.environement}"
   location            = azurerm_resource_group.rg-app.location
@@ -43,12 +49,6 @@ resource "azurerm_app_service" "app" {
 
   app_settings = merge(local.default_app_settings,var.custom_app_settings)
 
-}
-
-
-locals {
-  default_app_settings = {
-    "DEFAULT_KEY1" = "DEFAULT_VAL1"
-  }
+  #app_settings = {"KEY1" = "VAL1", "KEY2" = "VAL2"}
 
 }

@@ -37,13 +37,13 @@ variable "createdby" {
 
 
 variable "tags" {
-  type        = "map"
+  type        = map(string)
   description = "Tags"
   default     = {}
 }
 
 variable "app_settings" {
-  type        = "map"
+  type        = map(string)
   description = "App settings of the web app"
   default     = {}
 }
