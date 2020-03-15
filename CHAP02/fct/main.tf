@@ -1,6 +1,6 @@
 
 provider "azurerm" {
-   version = "< 2.0.0"
+  version = "< 2.0.0"
 }
 
 variable "app_name" {
@@ -19,6 +19,6 @@ variable "environement" {
 
 #FOR CONDITION
 resource "azurerm_resource_group" "rg-app" {
-  name     = var.environement == "Production" ? upper(format("RG-%s",var.app_name)) : upper(format("RG-%s-%s",var.app_name,var.environement))
+  name     = var.environement == "Production" ? upper(format("RG-%s", var.app_name)) : upper(format("RG-%s-%s", var.app_name, var.environement))
   location = "westeurope"
 }
