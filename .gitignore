@@ -3,3 +3,5 @@
 /**/mytextfile.txt
 /**/*.tfstate
 /**/*.tfstate.backup
+
+.idea
