@@ -3,7 +3,7 @@ variable "resource_groupe_name" {
 }
 
 variable "location" {
-  description = "Location of Azure reource"
+  description = "Location of Azure resource"
   default     = "West Europe"
 }
 

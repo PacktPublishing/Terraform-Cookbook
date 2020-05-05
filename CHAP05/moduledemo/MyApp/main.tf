@@ -8,16 +8,15 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "rg-app" {
-  name     = "RG_MyAPP"
+  name     = "RG_MyAPP_Demo"
   location = "West Europe"
 }
 
-
 module "webapp" {
-  source = "..\/Moduless\/webapp"
-  service_plan_name = "spmyapp"
-  app_name = "myapp"
-  location = azurerm_resource_group.rg-app.location
+  source               = "../Modules/webapp"
+  service_plan_name    = "spmyapp"
+  app_name             = "myappdemobook"
+  location             = azurerm_resource_group.rg-app.location
   resource_groupe_name = azurerm_resource_group.rg-app.name
 }
 
