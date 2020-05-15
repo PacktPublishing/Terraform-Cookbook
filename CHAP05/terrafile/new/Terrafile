@@ -7,3 +7,6 @@ webapp-1.0.0:
 network-3.0.1:
   source:  "https://github.com/Azure/terraform-azurerm-network.git"
   version: "v3.0.1"
+network-2.0.0:
+  source:  "https://github.com/Azure/terraform-azurerm-network.git"
+  version: "v2.0.0"
