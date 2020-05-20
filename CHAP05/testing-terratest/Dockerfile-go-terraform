@@ -1,0 +1,28 @@
+FROM golang:1.14.3
+
+# Define environment variables
+ARG TERRAFORM_VERSION="0.12.25"
+
+ENV TERRAFORM_VERSION=${TERRAFORM_VERSION}
+
+# Update & Install tool
+RUN apt-get update && apt-get install -y unzip
+
+# Install dep.
+ENV GOPATH /go
+ENV PATH /usr/local/go/bin:$GOPATH/bin:$PATH
+RUN /bin/bash -c "curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh"
+
+# Install Terraform
+RUN curl -Os https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
+    curl -Os https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_SHA256SUMS && \
+    curl -s https://keybase.io/hashicorp/pgp_keys.asc | gpg --import && \
+    curl -Os https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_SHA256SUMS.sig && \
+    gpg --verify terraform_${TERRAFORM_VERSION}_SHA256SUMS.sig terraform_${TERRAFORM_VERSION}_SHA256SUMS && \
+    shasum -a 256 -c terraform_${TERRAFORM_VERSION}_SHA256SUMS 2>&1 | grep "${TERRAFORM_VERSION}_linux_amd64.zip:\sOK" && \
+    unzip -o terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /usr/local/bin
+
+# Cleanup
+RUN rm terraform_${TERRAFORM_VERSION}_linux_amd64.zip
+RUN rm terraform_${TERRAFORM_VERSION}_SHA256SUMS
+RUN rm terraform_${TERRAFORM_VERSION}_SHA256SUMS.sig
