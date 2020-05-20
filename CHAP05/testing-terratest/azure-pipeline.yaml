@@ -1,0 +1,25 @@
+trigger:
+  - master
+
+resources:
+  - repo: self
+
+variables:
+  tag: '$(Build.BuildNumber)'
+
+name: "1.0$(Rev:.r)"
+
+stages:
+  - stage: Build
+    displayName: Build image
+    jobs:
+      - job: Build
+        displayName: Build
+        pool:
+          vmImage: 'ubuntu-latest'
+        steps:
+          - script: |
+              docker build -t module-test:$(tag) '$(Build.SourcesDirectory)/CHAP05/testing-terratest/Dockerfile'
+
+          - script: |
+              docker run
