@@ -18,8 +18,27 @@ stages:
         pool:
           vmImage: 'ubuntu-latest'
         steps:
+          - checkout: self
+            persistCredentials: true
+            clean: true
+            fetchDepth: 1
           - script: |
-              docker build -t module-test:$(tag) '$(Build.SourcesDirectory)/CHAP05/testing-terratest/Dockerfile'
-
+              docker build -t module-test:$(tag) .
+            workingDirectory: "$(Build.SourcesDirectory)/CHAP05/testing-terratest/"
+            displayName: "Docker build"
           - script: |
-              docker run
+              docker run module-test:$(tag)
+            workingDirectory: "$(Build.SourcesDirectory)/CHAP05/testing-terratest/"
+            displayName: "Docker run"
+          - task: PowerShell@2
+            displayName: "Tag code"
+            inputs:
+              targetType: 'inline'
+              script: |
+                $env:GIT_REDIRECT_STDERR` = '2>&1'
+                $tag = "v$(Build.BuildNumber)"
+                git tag $tag
+                Write-Host "Successfully created tag $tag"
+                git push --tags
+                Write-Host "Successfully pushed tag $tag"
+              failOnStderr: false
