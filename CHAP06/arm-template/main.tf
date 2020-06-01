@@ -39,7 +39,7 @@ resource "azurerm_template_deployment" "extension" {
   template_body       = file("ARM_siteExtension.json")
 
   parameters = {
-    siteName         = azurerm_app_service.app.name
+    appserviceName   = azurerm_app_service.app.name
     extensionName    = "AspNetCoreRuntime.2.2.x64"
     extensionVersion = "2.2.0-preview3-35497"
   }
