@@ -1,0 +1,35 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "siteName": {
+      "type": "string",
+      "metadata": {
+        "description": "The Azure App Service Name"
+      }
+    },
+    "extensionName": {
+      "type": "string",
+      "metadata": {
+        "description": "The Site Extension Name."
+      }
+    },
+    "extensionVersion": {
+      "type": "string",
+      "metadata": {
+        "description": "The Extension Version"
+      }
+    }
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Web/sites/siteextensions",
+      "name": "[concat(parameters('siteName'), '/', parameters('extensionName'))]",
+      "apiVersion": "2018-02-01",
+      "location": "[resourceGroup().location]",
+      "properties": {
+        "version": "[parameters('extensionVersion')]"
+      }
+    }
+  ]
+}
