@@ -1,0 +1,28 @@
+{
+    "terraform_path": "",
+    "use_azcli": false,
+    "backendfile": "dev/backend-Azure.tfvars",
+    "auto-approve": true,
+    "reconfigure": true,
+    "run_apply": true,
+    "run_output": true,
+    "planout": "out.tfplan",
+    "azure_credentials": {
+        "subscriptionId": "xxxxx-xxxx-xxxx-xxxxxxx",
+        "clientId": "xxxxx-xxxx-xxxx-xxxxxxx",
+        "tenantId": "xxxxx-xxxx-xxxx-xxxxxxx"
+    },
+    "varfiles": [
+        "dev/env-vars.tfvars"
+    ],
+    "vars": [
+        {
+            "name": "createdby",
+            "value": "__createdby__"
+        }
+    ],
+    "outputToAzDo": {
+        "webapp_name": "webappname",
+        "instrumentation_key": "ApplicationInsights.InstrumentationKey"
+    }
+}

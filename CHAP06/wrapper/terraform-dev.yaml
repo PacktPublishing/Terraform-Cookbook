@@ -1,0 +1,21 @@
+---
+terraform_path: 'tf-sample/'
+use_azcli: false
+backendfile: dev/backend-Cloud.tfvars
+auto-approve: true
+reconfigure: true
+run_apply: true
+run_output: true
+planout: out.tfplan
+azure_credentials:
+  subscriptionId: 574e6b21-f64b-4260-b566-81cc354db09b
+  clientId: ee7f75a0-8553-4e6a-98dd-2a55346d167a
+  tenantId: 2e3a33f9-66b1-4e2a-8b95-74102ad857c2
+varfiles:
+- dev/env-vars.tfvars
+vars:
+- name: createdby
+  value: __createdby__
+outputToAzDo:
+  webapp_name: webappname
+  instrumentation_key: ApplicationInsights.InstrumentationKey
