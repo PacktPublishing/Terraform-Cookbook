@@ -1,7 +1,7 @@
 ---
-terraform_path: 'wrapper/'
+terraform_path: ''
 use_azcli: false
-backendfile: dev/backend.tfvars
+backendfile: prod/backend.tfvars
 auto-approve: true
 reconfigure: true
 run_apply: true
@@ -12,6 +12,6 @@ azure_credentials:
   clientId: xxxxxxx-xxxxx-xxxxx-xxx-xxxxxxx
   tenantId: xxxxxxx-xxxxx-xxxxx-xxx-xxxxxxx
 varfiles:
-- dev/env-vars.tfvars
+- prod/env-vars.tfvars
 vars:
 outputToAzDo:
