@@ -4,24 +4,40 @@
 # https://aka.ms/yaml
 
 trigger:
-- master
-
+  - master
 pool:
   vmImage: 'ubuntu-latest'
 
 steps:
 
-- task: charleszipp.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-installer.TerraformInstaller@0
-  displayName: 'Install Terraform 0.12.24'
-  inputs:
-    terraformVersion: 0.12.24
+  - task: charleszipp.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-installer.TerraformInstaller@0
+    displayName: 'Install Terraform 0.12.24'
+    inputs:
+      terraformVersion: 0.12.24
 
-- script: terraform init -backend-config="CHAP07/pipeline/backend.tfvars" "CHAP07/pipeline/"
-  displayName: 'Terraform init'
+  - task: charleszipp.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-cli.TerraformCLI@0
+    displayName: 'terraform init'
+    inputs:
+      command: init
+      workingDirectory: "CHAP07/pipeline/"
+      backendType: azurerm
+      backendServiceArm: '<Your service connection name>'
+      backendAzureRmResourceGroupName: 'RG_BACKEND'
+      backendAzureRmStorageAccountName: storagetfbackendbook
+      backendAzureRmContainerName: tfstate
+      backendAzureRmKey: myappdemo.tfstate
 
-- script: terraform plan -out=outpipeline.tfplan "CHAP07/pipeline/"
-  displayName: 'Terraform plan'
+  - task: charleszipp.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-cli.TerraformCLI@0
+    displayName: 'terraform plan'
+    inputs:
+      command: plan
+      workingDirectory: "CHAP07/pipeline/"
+      commandOptions: '-out="out.tfplan"'
 
 
-- script: terraform apply outpipeline.tfplan -auto-approve
-  displayName: 'Terraform apply'
+  - task: charleszipp.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-cli.TerraformCLI@0
+    displayName: 'terraform plan'
+    inputs:
+      command: apply
+      workingDirectory: "CHAP07/pipeline/"
+      commandOptions: 'out.tfplan'
