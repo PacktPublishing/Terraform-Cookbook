@@ -36,7 +36,7 @@ steps:
 
 
   - task: charleszipp.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-cli.TerraformCLI@0
-    displayName: 'terraform plan'
+    displayName: 'terraform apply'
     inputs:
       command: apply
       workingDirectory: "CHAP07/pipeline/"
