@@ -16,7 +16,7 @@ steps:
   inputs:
     terraformVersion: 0.12.24
 
-- script: terraform init -backend-config="CHAP07/pipeline/backend.tf" "CHAP07/pipeline/"
+- script: terraform init -backend-config="CHAP07/pipeline/backend.tfvars" "CHAP07/pipeline/"
   displayName: 'Terraform init'
 
 - script: terraform plan -out=outpipeline.tfplan "CHAP07/pipeline/"
