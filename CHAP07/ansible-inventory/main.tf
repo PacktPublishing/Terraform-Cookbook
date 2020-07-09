@@ -20,14 +20,14 @@ variable "vmhosts" {
 
 module "network" {
   source              = "Azure/network/azurerm"
-  resource_group_name = "rg-demoinventory"
+  resource_group_name = "rg-ansibleinventory"
   subnet_prefixes     = ["10.0.2.0/24"]
   subnet_names        = ["subnet1"]
 }
 
 module "linuxservers" {
   source              = "Azure/compute/azurerm"
-  resource_group_name = "rg-demoinventory"
+  resource_group_name = "rg-ansibleinventory"
   vm_os_simple        = "UbuntuServer"
   nb_instances        = 2
   nb_public_ip        = 2
@@ -39,14 +39,13 @@ module "linuxservers" {
 
 
 resource "local_file" "inventory" {
-  depends_on = [module.linuxservers]
-  filename   = "inventory"
+  filename = "inventory"
   content = templatefile("template-inventory.tpl",
     {
       vm_ip  = module.linuxservers.network_interface_private_ip
       vm_dns = var.vmhosts
   })
-
+  depends_on = [module.linuxservers]
 }
 
 output "ips" {
