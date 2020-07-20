@@ -6,9 +6,10 @@ provider "azurerm" {
   features {}
 }
 
-module "resourcegroup" {
-  resource_group_name = "RG_MyAPP_DemoTFCLOUD"
-  location            = "West Europe"
+resource "azurerm_resource_group" "rg" {
+  name     = "RG_MyAPP_DemoTFCLOUD"
+  location = "West Europe"
+
 }
 
 module "webapp" {
@@ -17,5 +18,5 @@ module "webapp" {
   service_plan_name    = "demoappsp"
   app_name             = "myappdemobookcloud"
   location             = "West Europe"
-  resource_groupe_name = module.resourcegroup.resource_group_name
+  resource_groupe_name = azurerm_resource_group.rg.name
 }
