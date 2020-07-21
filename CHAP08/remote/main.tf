@@ -20,3 +20,16 @@ module "webapp" {
   location             = "West Europe"
   resource_groupe_name = azurerm_resource_group.rg.name
 }
+
+
+### USING CLI #######
+terraform {
+  backend "remote" {
+    hostname     = "app.terraform.io"
+    organization = "demoBook"
+
+    workspaces {
+      name = "demo-app-remote"
+    }
+  }
+}
