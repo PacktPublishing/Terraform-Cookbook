@@ -1,4 +1,4 @@
-$apiToken = "476xcIQIQDCi7Q.atlasv1.Cg4WT3THBAEcmeonlvmhIu7jk7VCzn9UGGraNbymuOIjH44uHtzlE57OtCRG9j5uFgw"
+$apiToken = $args[0]  #API TOKEN
 $organization = "demoBook"
 $headers = @{ }
 $headers["Authorization"] = "Bearer  $apiToken"
