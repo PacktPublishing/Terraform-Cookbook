@@ -1,0 +1,17 @@
+{
+  "data": {
+    "attributes": {
+      "is-destroy": false,
+      "message": "Run for demo Book"
+    },
+    "type":"runs",
+    "relationships": {
+      "workspace": {
+        "data": {
+          "type": "workspaces",
+          "id": "ws-xxxxxxxxxx"
+        }
+      }
+    }
+  }
+}
