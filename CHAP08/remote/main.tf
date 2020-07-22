@@ -5,7 +5,7 @@ terraform {
 provider "azurerm" {
   features {}
 }
-
+# RG
 resource "azurerm_resource_group" "rg" {
   name     = "RG_MyAPP_DemoTFCLOUD"
   location = "West Europe"
