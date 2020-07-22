@@ -11,7 +11,7 @@ resource "azurerm_resource_group" "rg" {
   location = "West Europe"
 
 }
-
+# Use Web App module
 module "webapp" {
   source               = "app.terraform.io/demoBook/webapp/azurerm"
   version              = "1.0.1"
