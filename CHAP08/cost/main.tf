@@ -15,9 +15,9 @@ resource "azurerm_public_ip" "ip" {
 }
 
 data "azurerm_subnet" "subnet" {
-  name                 = "Default1"
+  name                 = "default"
   resource_group_name  = "RG_NETWORK"
-  virtual_network_name = "VNET-DEMO"
+  virtual_network_name = "VNET_TEST"
 }
 
 resource "azurerm_network_interface" "nic" {
@@ -33,16 +33,6 @@ resource "azurerm_network_interface" "nic" {
   }
 }
 
-
-data "azurerm_key_vault" "keyvault" {
-  name                = "keyvdemobook"
-  resource_group_name = "rg_keyvault"
-}
-
-data "azurerm_key_vault_secret" "vm-password" {
-  name         = "vmdemoaccess"
-  key_vault_id = data.azurerm_key_vault.keyvault.id
-}
 
 
 
@@ -67,8 +57,8 @@ resource "azurerm_virtual_machine" "main" {
   }
   os_profile {
     computer_name  = "myvmdemo"
-    admin_username = "testadmin"
-    admin_password = data.azurerm_key_vault_secret.vm-password.value
+    admin_username = "testdemo"
+    admin_password = "Password123!"
   }
   os_profile_linux_config {
     disable_password_authentication = false
