@@ -1,0 +1,56 @@
+{
+  "vars": [
+    {
+      "data": {
+        "type": "vars",
+        "attributes": {
+          "key": "ARM_SUBSCRIPTION_ID",
+          "value": "xxxxx-xxxxxxx-xxxxxx-xxxxxx",
+          "description": "The Azure Subscription ID",
+          "category": "env",
+          "hcl": false,
+          "sensitive": false
+        }
+      }
+    },
+    {
+      "data": {
+        "type": "vars",
+        "attributes": {
+          "key": "ARM_CLIENT_ID",
+          "value": "xxxxx-xxxxxxx-xxxxxx-xxxxxx",
+          "description": "The Service Principal Client Id",
+          "category": "env",
+          "hcl": false,
+          "sensitive": false
+        }
+      }
+    },
+    {
+      "data": {
+        "type": "vars",
+        "attributes": {
+          "key": "ARM_CLIENT_SECRET",
+          "value": "xxxxx-xxxxxxx-xxxxxx-xxxxxx",
+          "description": "The Service Principal Client Secret",
+          "category": "env",
+          "hcl": false,
+          "sensitive": true
+        }
+      }
+    },
+    {
+      "data": {
+        "type": "vars",
+        "attributes": {
+          "key": "ARM_TENANT_ID",
+          "value": "xxxxx-xxxxxxx-xxxxxx-xxxxxx",
+          "description": "The Service Principal Tenant Id",
+          "category": "env",
+          "hcl": false,
+          "sensitive": false
+        }
+      }
+    }
+  ]
+}

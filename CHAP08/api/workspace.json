@@ -1,0 +1,17 @@
+{
+  "data": {
+    "attributes": {
+      "name": "workspace-demo-api",
+      "auto-apply": true,
+      "working-directory": "CHAP08/remote",
+      "vcs-repo": {
+        "identifier": "mikaelkrief/terraform-Cookbook",
+        "oauth-token-id": "ot-Jxxxxxxxxxx",
+        "branch": "",
+        "default-branch": true,
+        "queue-all-runs": true
+      }
+    },
+    "type": "workspaces"
+  }
+}

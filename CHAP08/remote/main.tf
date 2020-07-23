@@ -19,5 +19,18 @@ module "webapp" {
   app_name             = "myappdemobookcloud"
   location             = "West Europe"
   resource_groupe_name = azurerm_resource_group.rg.name
-  sp_sku               = "Premium"
+  sp_sku               = "Standard"
+}
+
+
+### USING CLI #######
+terraform {
+  backend "remote" {
+    hostname     = "app.terraform.io"
+    organization = "demoBook"
+
+    workspaces {
+      name = "demo-app-remote"
+    }
+  }
 }
