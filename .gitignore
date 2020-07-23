@@ -3,5 +3,6 @@
 /**/mytextfile.txt
 /**/*.tfstate
 /**/*.tfstate.backup
-
+/**/kitchen/.kitchen
+/**/detectdestroy
 .idea
