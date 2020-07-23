@@ -1,0 +1,23 @@
+# This policy uses the Sentinel tfplan/v2 import to require that
+# all Azure Service plan have tier SKU from an allowed list
+
+# Import common-functions/tfplan-functions/tfplan-functions.sentinel
+# with alias "plan"
+import "tfplan-functions" as plan
+
+# Allowed Azure Srvice plan
+# Include "null" to allow missing or computed values
+allowed_tiers = ["Basic", "Standard"]
+
+# Get all Azure Service plan
+allAzureServicePlan = plan.find_resources("azurerm_app_service_plan")
+
+# Filter to Azure Service plan sku
+# Warnings will be printed for all violations since the last parameter is true
+violatingAzureServicePlan = plan.filter_attribute_not_in_list(allAzureServicePlan,
+                    "sku.0.tier", allowed_tiers, true)
+
+# Main rule
+main = rule {
+  length(violatingAzureServicePlan["messages"]) is 0
+}

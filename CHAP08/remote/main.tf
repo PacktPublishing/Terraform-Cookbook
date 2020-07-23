@@ -14,11 +14,12 @@ resource "azurerm_resource_group" "rg" {
 
 module "webapp" {
   source               = "app.terraform.io/demoBook/webapp/azurerm"
-  version              = "1.0.1"
+  version              = "1.0.3"
   service_plan_name    = "demoappsp"
   app_name             = "myappdemobookcloud"
   location             = "West Europe"
   resource_groupe_name = azurerm_resource_group.rg.name
+  sp_sku               = "Standard"
 }
 
 

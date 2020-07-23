@@ -3,7 +3,6 @@ $worspaceId = $args[1] # WORKSPACE ID
 $headers = @{ }
 $headers["Authorization"] = "Bearer  $apiToken"
 $headers["Content-Type"] = "application/vnd.api+json"
-
 $uriVariables = "https://app.terraform.io/api/v2/workspaces/$worspaceId/vars"
 try
 {
