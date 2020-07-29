@@ -1,4 +1,4 @@
-GOLANG_VERSION="1.14.3"
+GOLANG_VERSION="1.14.6"
 GOLANG_OS_ARCH=linux-amd64
 
 mkdir "$HOME/go"
@@ -12,5 +12,3 @@ curl -Os https://storage.googleapis.com/golang/go${GOLANG_VERSION}.${GOLANG_OS_A
 export GOPATH="$HOME/go"
 export PATH="/usr/local/go/bin:$GOPATH/bin:$PATH"
 
-# Install Go dep.
-curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh

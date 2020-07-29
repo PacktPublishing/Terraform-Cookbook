@@ -1,7 +1,0 @@
- cp /mnt/c/REPOSPERSO/Terraform-Cookbook/CHAP05/testing-terratest/module /root/go/src/ -r
- dep ensure
- go test -v
-
-
- docker build image:tag .
- docker run image:tag
