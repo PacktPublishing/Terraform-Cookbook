@@ -1,4 +1,4 @@
 [vm-web]
-%{ for index, vm in vm_dns ~}
-${vm} ansible_host=${vm_ip[index]}
+%{ for host, ip in vm_dnshost ~}
+${host} ansible_host=${ip}
 %{ endfor ~}
