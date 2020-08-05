@@ -9,6 +9,6 @@ policy "allowed-app-service-plan-tiers"{
 }
 
 policy "allowed-app-service-to-ftps"{
-  source ="./allowed-app-service-to-ftps.sentinel"
+  source ="./restrict-app-service-to-ftps.sentinel"
   enforcement_level = "hard-mandatory"
 }
