@@ -1,7 +1,7 @@
 output "app_service_names" {
-  value = [for x in azurerm_app_service.app : x.name]
+  value = [for app in azurerm_app_service.app : app.name]
 }
 
 output "app_service_urls" {
-  value = {for x in azurerm_app_service.app :  x.name => x.default_site_hostname  }
+  value = { for app in azurerm_app_service.app : app.name => app.default_site_hostname }
 }

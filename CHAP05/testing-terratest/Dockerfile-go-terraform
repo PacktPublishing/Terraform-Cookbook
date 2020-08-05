@@ -1,7 +1,7 @@
 FROM golang:1.14.3
 
 # Define environment variables
-ARG TERRAFORM_VERSION="0.12.25"
+ARG TERRAFORM_VERSION="0.12.29"
 
 ENV TERRAFORM_VERSION=${TERRAFORM_VERSION}
 
@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y unzip
 # Install dep.
 ENV GOPATH /go
 ENV PATH /usr/local/go/bin:$GOPATH/bin:$PATH
-RUN /bin/bash -c "curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh"
+
 
 # Install Terraform
 RUN curl -Os https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \

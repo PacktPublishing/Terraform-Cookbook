@@ -30,18 +30,18 @@ resource "azurerm_app_service_plan" "plan-app" {
 resource "azurerm_app_service" "app" {
   for_each = var.web_apps
 
-  name                = lookup(each.value, "name")
+  name                = lookup(each.value["name"])
   location            = lookup(each.value, "location", "West Europe")
   resource_group_name = azurerm_resource_group.rg-app.name
   app_service_plan_id = azurerm_app_service_plan.plan-app.id
 
   site_config {
-    dotnet_framework_version = lookup(each.value, "dotnet_framework_version")
+    dotnet_framework_version = lookup(each.value["dotnet_framework_version"])
   }
 
   connection_string {
     name  = "DataBase"
     type  = "SQLServer"
-    value = "Server=${lookup(each.value, "serverdatabase_name")};Integrated Security=SSPI"
+    value = "Server=${lookup(each.value["serverdatabase_name"])};Integrated Security=SSPI"
   }
 }
