@@ -20,6 +20,7 @@ module "webapp" {
   location             = "West Europe"
   resource_groupe_name = azurerm_resource_group.rg.name
   sp_sku               = "Standard"
+  ftps_state           = "FtpsOnly"
 }
 
 
