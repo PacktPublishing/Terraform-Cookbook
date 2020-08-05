@@ -19,7 +19,7 @@ module "webapp" {
   app_name             = "myappdemobookcloud"
   location             = "West Europe"
   resource_groupe_name = azurerm_resource_group.rg.name
-  sp_sku               = "Standard"
+  sp_sku               = "Premium" #"Standard"
   ftps_state           = "FtpsOnly"
 }
 
