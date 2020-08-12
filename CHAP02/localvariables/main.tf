@@ -1,5 +1,5 @@
 provider "azurerm" {
-    version = "< 2.0.0"
+  features {}
 }
 
 variable "application_name" {
@@ -20,11 +20,11 @@ resource "azurerm_resource_group" "rg" {
 }
 
 resource "azurerm_public_ip" "pip" {
-  name                         = "IP-${local.resource_name}"
-  location                     = "West Europe"
-  resource_group_name          = azurerm_resource_group.rg.name
-  public_ip_address_allocation = "Dynamic"
-  domain_name_label            = "mydomain"
+  name                = "IP-${local.resource_name}"
+  location            = "West Europe"
+  resource_group_name = azurerm_resource_group.rg.name
+  allocation_method   = "Dynamic"
+  domain_name_label   = "mydomain"
 }
 
 

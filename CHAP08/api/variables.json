@@ -5,7 +5,7 @@
         "type": "vars",
         "attributes": {
           "key": "ARM_SUBSCRIPTION_ID",
-          "value": "xxxxx-xxxxxxx-xxxxxx-xxxxxx",
+          "value": "8a7aace5-74aa-416f-b8e4-2c292b6304e5",
           "description": "The Azure Subscription ID",
           "category": "env",
           "hcl": false,
@@ -18,7 +18,7 @@
         "type": "vars",
         "attributes": {
           "key": "ARM_CLIENT_ID",
-          "value": "xxxxx-xxxxxxx-xxxxxx-xxxxxx",
+          "value": "282936c6-298d-40bc-890b-0906b7d9c107",
           "description": "The Service Principal Client Id",
           "category": "env",
           "hcl": false,
@@ -31,7 +31,7 @@
         "type": "vars",
         "attributes": {
           "key": "ARM_CLIENT_SECRET",
-          "value": "xxxxx-xxxxxxx-xxxxxx-xxxxxx",
+          "value": "62e36b75-16aa-4c33-8fbd-b6f86f250a8f",
           "description": "The Service Principal Client Secret",
           "category": "env",
           "hcl": false,
@@ -44,7 +44,7 @@
         "type": "vars",
         "attributes": {
           "key": "ARM_TENANT_ID",
-          "value": "xxxxx-xxxxxxx-xxxxxx-xxxxxx",
+          "value": "2e3a33f9-66b1-4e2a-8b95-74102ad857c2",
           "description": "The Service Principal Tenant Id",
           "category": "env",
           "hcl": false,
