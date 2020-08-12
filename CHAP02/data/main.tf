@@ -4,7 +4,7 @@ terraform {
 }
 
 provider "azurerm" {
-   version = "< 2.0.0"
+   features {}
 }
 
 locals {
@@ -38,7 +38,7 @@ resource "azurerm_application_insights" "appinsight-app" {
   name                = "${var.app_name}-${var.environement}"
   location            = azurerm_resource_group.rg-app.location
   resource_group_name = azurerm_resource_group.rg-app.name
-  application_type    = "Web"
+  application_type    = "web"
 
   tags = {
     ENV = var.environement

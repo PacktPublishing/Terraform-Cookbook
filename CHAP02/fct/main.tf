@@ -1,6 +1,6 @@
 
 provider "azurerm" {
-  version = "< 2.0.0"
+  features {}
 }
 
 variable "app_name" {
