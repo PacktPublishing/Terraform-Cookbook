@@ -19,7 +19,7 @@ steps:
     displayName: 'terraform init'
     inputs:
       command: init
-      workingDirectory: "CHAP07/pipeline/"
+      workingDirectory: "CHAP07/workspace-pipeline/"
       backendType: azurerm
       backendServiceArm: 'Demo Book'
       backendAzureRmResourceGroupName: 'RG_BACKEND'
@@ -37,7 +37,7 @@ steps:
     displayName: 'terraform plan'
     inputs:
       command: plan
-      workingDirectory: "CHAP07/pipeline/"
+      workingDirectory: "CHAP07/workspace-pipeline/"
       commandOptions: '-out="out.tfplan"'
 
 
@@ -45,5 +45,5 @@ steps:
     displayName: 'terraform apply'
     inputs:
       command: apply
-      workingDirectory: "CHAP07/pipeline/"
+      workingDirectory: "CHAP07/workspace-pipeline/"
       commandOptions: 'out.tfplan'
