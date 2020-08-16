@@ -28,6 +28,7 @@ steps:
       backendAzureRmKey: myappdemows.tfstate
 
   - task: PowerShell@2
+    displayName: 'Manage Workspaces'
     inputs:
       filePath: 'CHAP07/workspace-pipeline/ManageWorkspaces.ps1'
       arguments: '$(Build.SourceBranchName)'
