@@ -29,9 +29,9 @@ steps:
 
   - task: PowerShell@2
     inputs:
-      filePath: 'CHAP07/pipeline/ManageWorkspaces.ps1'
+      filePath: 'CHAP07/workspace-pipeline/ManageWorkspaces.ps1'
       arguments: '$(Build.SourceBranchName)'
-      workingDirectory: "CHAP07/pipeline/"
+      workingDirectory: "CHAP07/workspace-pipeline/"
 
   - task: charleszipp.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-cli.TerraformCLI@0
     displayName: 'terraform plan'
