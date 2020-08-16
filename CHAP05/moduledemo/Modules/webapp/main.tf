@@ -1,5 +1,3 @@
-
-
 resource "azurerm_app_service_plan" "plan-app" {
   name                = var.service_plan_name
   location            = var.location

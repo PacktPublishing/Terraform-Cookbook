@@ -1,0 +1,12 @@
+GEM
+  specs:
+    colorize (0.8.1)
+
+PLATFORMS
+  x64-mingw32
+
+DEPENDENCIES
+  colorize
+
+BUNDLED WITH
+   2.1.4

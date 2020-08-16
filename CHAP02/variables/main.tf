@@ -19,6 +19,10 @@ variable "resource_group_name" {
 variable "location" {
   description ="The name of the Azure location"
   default ="West Europe"
+  validation {  # TF 0.13
+    condition     = can(index(["westeurope","westus"], var.location) >= 0)
+    error_message = "The location must be westeurope or westus."
+  }
 }
 
 
