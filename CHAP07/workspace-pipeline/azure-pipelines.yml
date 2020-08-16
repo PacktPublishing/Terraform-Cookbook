@@ -11,33 +11,34 @@ pool:
 steps:
 
   - task: charleszipp.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-installer.TerraformInstaller@0
-    displayName: 'Install Terraform 0.12.24'
+    displayName: 'Install Terraform 0.12.29'
     inputs:
-      terraformVersion: 0.12.24
+      terraformVersion: 0.12.29
 
   - task: charleszipp.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-cli.TerraformCLI@0
     displayName: 'terraform init'
     inputs:
       command: init
-      workingDirectory: "CHAP07/pipeline/"
+      workingDirectory: "CHAP07/workspace-pipeline/"
       backendType: azurerm
       backendServiceArm: '<Your service connection name>'
       backendAzureRmResourceGroupName: 'RG_BACKEND'
       backendAzureRmStorageAccountName: storagetfbackendbook
       backendAzureRmContainerName: tfstate
-      backendAzureRmKey: myappdemo.tfstate
+      backendAzureRmKey: myappdemows.tfstate
 
   - task: PowerShell@2
+    displayName: 'Manage Workspaces'
     inputs:
-      filePath: 'CHAP07/pipeline/ManageWorkspaces.ps1'
+      filePath: 'CHAP07/workspace-pipeline/ManageWorkspaces.ps1'
       arguments: '$(Build.SourceBranchName)'
-      workingDirectory: "CHAP07/pipeline/"
+      workingDirectory: "CHAP07/workspace-pipeline/"
 
   - task: charleszipp.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-cli.TerraformCLI@0
     displayName: 'terraform plan'
     inputs:
       command: plan
-      workingDirectory: "CHAP07/pipeline/"
+      workingDirectory: "CHAP07/workspace-pipeline/"
       commandOptions: '-out="out.tfplan"'
 
 
@@ -45,5 +46,5 @@ steps:
     displayName: 'terraform apply'
     inputs:
       command: apply
-      workingDirectory: "CHAP07/pipeline/"
+      workingDirectory: "CHAP07/workspace-pipeline/"
       commandOptions: 'out.tfplan'

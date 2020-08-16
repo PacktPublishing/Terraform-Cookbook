@@ -49,7 +49,6 @@ resource "local_file" "inventory" {
     {
       vm_dnshost = zipmap(var.vmhosts, module.linuxservers.network_interface_private_ip)
   })
-  depends_on = [module.linuxservers]
 }
 
 output "ips" {

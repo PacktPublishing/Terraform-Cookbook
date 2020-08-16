@@ -1,4 +1,4 @@
-resource_group_name  = "MyRgRemoteBackend"
-storage_account_name = "storageremotetf"
-container_name       = "tfbackends"
+resource_group_name  = "RG_BACKEND"
+storage_account_name = "storagetfbackendbook"
+container_name       = "tfstate"
 key                  = "myapp/myapp-dev.tfstate"

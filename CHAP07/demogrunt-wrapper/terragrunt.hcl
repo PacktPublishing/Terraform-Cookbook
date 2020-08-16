@@ -1,7 +1,6 @@
 terraform {
 
-
-  # Pass custom var files to Terraform
+# Pass custom init option to Terraform
   extra_arguments "custom_backend" {
     commands = [
       "init"
@@ -25,5 +24,6 @@ terraform {
       "-var-file", "env-vars.tfvars"
     ]
   }
+  
 
 }

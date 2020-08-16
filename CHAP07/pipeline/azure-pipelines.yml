@@ -11,9 +11,9 @@ pool:
 steps:
 
   - task: charleszipp.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-installer.TerraformInstaller@0
-    displayName: 'Install Terraform 0.12.24'
+    displayName: 'Install Terraform 0.12.29'
     inputs:
-      terraformVersion: 0.12.24
+      terraformVersion: 0.12.29
 
   - task: charleszipp.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-cli.TerraformCLI@0
     displayName: 'terraform init'
@@ -25,7 +25,7 @@ steps:
       backendAzureRmResourceGroupName: 'RG_BACKEND'
       backendAzureRmStorageAccountName: storagetfbackendbook
       backendAzureRmContainerName: tfstate
-      backendAzureRmKey: myappdemo.tfstate
+      backendAzureRmKey: myappdemopipeline.tfstate
 
   - task: charleszipp.azure-pipelines-tasks-terraform.azure-pipelines-tasks-terraform-cli.TerraformCLI@0
     displayName: 'terraform plan'

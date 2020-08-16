@@ -1,3 +1,3 @@
 output "subnets" {
-  value = module.vnet.vnet_subnets
+  value = azurerm_subnet.subnet[*].name
 }
