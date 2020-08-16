@@ -1,4 +1,5 @@
 $envName=$args[0]
+terraform init -backend-config="backend.tfvars"
 $countws = terraform workspace list -no-color | Select-String $envName -AllMatches
 if ($countws.Matches.Count -eq 0) {
     Write-Host "Create new Workspace $envName"
