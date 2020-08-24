@@ -17,7 +17,7 @@ module "webapp" {
   service_plan_name    = "spmyapp2"
   app_name             = "myappdemobook2"
   location             = "West Europe"
-  resource_groupe_name = module.resourcegroup.resource_group_name
+  resource_group_name = module.resourcegroup.resource_group_name
 }
 
 

@@ -1,4 +1,4 @@
-resource_groupe_name = "RG-App"
+resource_group_name = "RG-App"
 service_plan_name    = "Plan-App"
 environement         = "DEV2"
 custom_app_settings = {

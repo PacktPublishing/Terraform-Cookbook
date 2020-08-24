@@ -14,7 +14,7 @@ No requirements.
 |------|-------------|------|---------|:--------:|
 | app\_name | Name of application | `any` | n/a | yes |
 | location | Location of Azure resource | `string` | `"West Europe"` | no |
-| resource\_groupe\_name | Resource groupe name | `any` | n/a | yes |
+| resource\_group\_name | Resource group name | `any` | n/a | yes |
 | service\_plan\_name | Service plan name | `any` | n/a | yes |
 
 ## Outputs

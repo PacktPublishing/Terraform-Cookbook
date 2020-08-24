@@ -8,7 +8,7 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "rg-app" {
-  name     = "${var.resource_groupe_name}-${var.environement}"
+  name     = "${var.resource_group_name}-${var.environement}"
   location = var.location
   tags = {
     ENV = var.environement

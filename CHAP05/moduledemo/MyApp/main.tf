@@ -17,7 +17,7 @@ module "webapp" {
   service_plan_name    = "spmyapp"
   app_name             = "myappdemobook"
   location             = azurerm_resource_group.rg-app.location
-  resource_groupe_name = azurerm_resource_group.rg-app.name
+  resource_group_name = azurerm_resource_group.rg-app.name
 }
 
 output "webapp_url" {
