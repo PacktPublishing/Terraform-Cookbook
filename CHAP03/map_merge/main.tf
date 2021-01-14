@@ -8,11 +8,11 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "rg-app" {
-  name     = "${var.resource_group_name}-${var.environement}"
+  name     = "${var.resource_group_name}-${var.environment}"
   location = var.location
   ## OLD CODE WIThOUT MAP
   #tags = {
-  #  ENV = var.environement
+  #  ENV = var.environment
   #  CREATEDBY = var.created_by
   #}
 
@@ -20,7 +20,7 @@ resource "azurerm_resource_group" "rg-app" {
 }
 
 resource "azurerm_app_service_plan" "plan-app" {
-  name                = "${var.service_plan_name}-${var.environement}"
+  name                = "${var.service_plan_name}-${var.environment}"
   location            = azurerm_resource_group.rg-app.location
   resource_group_name = azurerm_resource_group.rg-app.name
 
@@ -37,7 +37,7 @@ locals {
 }
 
 resource "azurerm_app_service" "app" {
-  name                = "${var.app_name}-${var.environement}"
+  name                = "${var.app_name}-${var.environment}"
   location            = azurerm_resource_group.rg-app.location
   resource_group_name = azurerm_resource_group.rg-app.name
   app_service_plan_id = azurerm_app_service_plan.plan-app.id

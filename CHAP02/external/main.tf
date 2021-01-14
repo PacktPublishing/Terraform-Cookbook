@@ -7,7 +7,7 @@ variable "application_name" {
 }
 
 variable "environment_name" {
-  description = "The name of environement"
+  description = "The name of environment"
 }
 
 variable "country_code" {
