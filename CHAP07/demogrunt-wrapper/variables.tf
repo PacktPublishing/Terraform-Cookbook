@@ -15,8 +15,8 @@ variable "app_name" {
   description = "Name of application"
 }
 
-variable "environement" {
-  description = "Environement Name"
+variable "environment" {
+  description = "Environment Name"
 }
 
 

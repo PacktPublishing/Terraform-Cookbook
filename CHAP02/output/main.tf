@@ -1,5 +1,5 @@
 resource "azurerm_app_service" "app" {
-  name                = "${var.app_name}-${var.environement}"
+  name                = "${var.app_name}-${var.environment}"
   location            = azurerm_resource_group.rg-app.location
   resource_group_name = azurerm_resource_group.rg-app.name
   app_service_plan_id = azurerm_app_service_plan.plan-app.id
@@ -11,7 +11,7 @@ resource "azurerm_app_service" "app" {
   }
 
   tags = {
-    ENV       = var.environement
+    ENV       = var.environment
     CreatedBy = var.createdby
   }
 }

@@ -16,8 +16,8 @@ variable "app_name" {
   default     = "MyApp2"
 }
 
-variable "environement" {
-  description = "Environement Name"
+variable "environment" {
+  description = "Environment Name"
 }
 
 
