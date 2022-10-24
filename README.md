@@ -68,3 +68,7 @@ Click on the following link to see the Code in Action:
 
 ## Get to Know the Author
 **Mikael Krief** lives in France and works as a DevOps engineer. He came to believe that Infrastructure as Code is a fundamental practice in DevOps culture. He is therefore interested in HashiCorp products and specializes in the use of Terraform in several company contexts. He loves to share his passion through various communities, such as the HashiCorp User Groups. In 2019, he wrote the book Learning DevOps (Packt Publishing), and he also contributes to many public projects, writes blogs and other books, and speaks at conferences. For all his contributions and passion, he was nominated and selected as a HashiCorp Ambassador, and he has been awarded the Microsoft Most Valuable Professional (MVP) award for 5 years.
+### Download a free PDF
+
+ <i>If you have already purchased a print or Kindle version of this book, you can get a DRM-free PDF version at no cost.<br>Simply click on the link to claim your free PDF.</i>
+<p align="center"> <a href="https://packt.link/free-ebook/9781800207554">https://packt.link/free-ebook/9781800207554 </a> </p>
